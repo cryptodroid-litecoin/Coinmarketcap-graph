@@ -11,7 +11,7 @@ def query():
 alldata = query()
 marketcap = []
 volume = []
-labels = []
+coinsnames = []
 data = []
 for i in alldata:
     if i['24h_volume_usd'] != None:
@@ -21,7 +21,7 @@ for i in alldata:
             if i['24h_volume_usd'] > 10000:
                 marketcap.append(i['market_cap_usd'])
                 volume.append(i['24h_volume_usd'])
-                labels.append(i['name'])
+                coinsnames.append(i['name'])
 
 # Display the datas with matplotlib
 fig = plt.figure()
@@ -32,7 +32,7 @@ ax.set_yscale('log')
 
 # add legend for each coins
 z = 0
-for i in labels:
+for i in coinsnames:
     plt.annotate(i, xy=(marketcap[z], volume[z]), xycoords='data',
     xytext=(-20,20), textcoords='offset points',ha = 'right', va = 'bottom',
     bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),
