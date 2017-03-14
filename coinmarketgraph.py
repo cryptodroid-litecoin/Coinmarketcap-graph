@@ -24,9 +24,7 @@ for i in alldat:
 abscX = np.asmatrix(absc)
 ordnX = np.asmatrix(ordn)
 labelsX = np.asmatrix(labels)
-labelsX = np.transpose(labelsX)
 data = np.r_[abscX[None,:],ordnX[None,:]]
-data = np.transpose(data)
 
 fig = plt.figure()
 ax = plt.gca()
