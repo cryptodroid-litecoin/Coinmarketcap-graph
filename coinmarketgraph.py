@@ -30,7 +30,7 @@ ax.scatter(marketcap, volume, label = 'name')
 ax.set_xscale('log')
 ax.set_yscale('log')
 
-# add legend for each coins
+# add the name for each coins
 z = 0
 for i in coinsnames:
     plt.annotate(i, xy=(marketcap[z], volume[z]), xycoords='data',
