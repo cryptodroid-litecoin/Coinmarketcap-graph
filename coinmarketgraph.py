@@ -17,7 +17,7 @@ for i in alldat:
         i['24h_volume_usd'] = float(i['24h_volume_usd'])
         if i['market_cap_usd'] != None:
             i['market_cap_usd'] = float(i['market_cap_usd'])
-            if i['24h_volume_usd'] > 1000:
+            if i['24h_volume_usd'] > 10000:
                 absc.append(i['market_cap_usd'])
                 ordn.append(i['24h_volume_usd'])
                 labels.append(i['name'])
