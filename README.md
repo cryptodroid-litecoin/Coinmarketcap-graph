@@ -3,4 +3,4 @@ Simple python program for displaying cryptocoins market cap / daily volume from 
 
 Select coins above 10k $ of daily volume and display them on a log scale in a matplotlib graph
 
-(you need python, matplotlib, numpy and urlrequests)
+(you need python, matplotlib and urlrequests)
