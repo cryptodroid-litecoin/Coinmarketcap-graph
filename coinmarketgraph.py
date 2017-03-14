@@ -16,10 +16,12 @@ data = []
 for i in alldat:
     if i['24h_volume_usd'] != None:
         i['24h_volume_usd'] = float(i['24h_volume_usd'])
-        if i['24h_volume_usd'] > 1000:
-            absc.append(i['market_cap_usd'])
-            ordn.append(i['24h_volume_usd'])
-            labels.append(i['name'])
+        if i['market_cap_usd'] != None:
+            i['market_cap_usd'] = float(i['market_cap_usd'])
+            if i['24h_volume_usd'] > 1000:
+                absc.append(i['market_cap_usd'])
+                ordn.append(i['24h_volume_usd'])
+                labels.append(i['name'])
 
 abscX = np.asmatrix(absc)
 ordnX = np.asmatrix(ordn)
