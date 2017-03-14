@@ -1,5 +1,4 @@
 import requests
-import numpy as np
 import matplotlib.pyplot as plt
 
 def query():
@@ -22,11 +21,6 @@ for i in alldat:
                 absc.append(i['market_cap_usd'])
                 ordn.append(i['24h_volume_usd'])
                 labels.append(i['name'])
-
-abscX = np.asmatrix(absc)
-ordnX = np.asmatrix(ordn)
-labelsX = np.asmatrix(labels)
-data = np.r_[abscX[None,:],ordnX[None,:]]
 
 fig = plt.figure()
 ax = plt.gca()
