@@ -15,7 +15,9 @@ alldata = query()
 marketcap = []
 volume = []
 coinsnames = []
+pchange1h = []
 pchange24 = []
+pchange7d = []
 data = []
 for i in alldata:
     if i['24h_volume_usd'] != None:
@@ -26,7 +28,9 @@ for i in alldata:
                 marketcap.append(i['market_cap_usd'])
                 volume.append(i['24h_volume_usd'])
                 coinsnames.append(i['name'])
+                pchange1h.append(i['percent_change_1h'])
                 pchange24.append(i['percent_change_24h'])
+                pchange7d.append(i['percent_change_7d'])
 
 # Display the datas with matplotlib
 fig = plt.figure()
@@ -36,6 +40,7 @@ ax.set_xscale('log')
 ax.set_yscale('log')
 
 # add the name for each coins and colors code for marketcap change for the last 24h
+
 def anotate(c):
         plt.annotate(coinsnames[z], xy=(marketcap[z], volume[z]), xycoords='data',
         xytext=(-20,20), textcoords='offset points',ha = 'right', va = 'bottom',
