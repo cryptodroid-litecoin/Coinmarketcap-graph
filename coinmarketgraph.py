@@ -15,10 +15,9 @@ alldata = query()
 marketcap = []
 volume = []
 coinsnames = []
-pchange1h = []
 pchange24h = []
-pchange7d = []
 data = []
+
 for i in alldata:
     if i['24h_volume_usd'] != None:
         i['24h_volume_usd'] = float(i['24h_volume_usd'])
@@ -28,9 +27,7 @@ for i in alldata:
                 marketcap.append(i['market_cap_usd'])
                 volume.append(i['24h_volume_usd'])
                 coinsnames.append(i['name'])
-                pchange1h.append(i['percent_change_1h'])
                 pchange24h.append(i['percent_change_24h'])
-                pchange7d.append(i['percent_change_7d'])
 
 # Display the datas with matplotlib
 fig = plt.figure()
@@ -46,6 +43,7 @@ def anotate(c):
         xytext=(-20,20), textcoords='offset points',ha = 'right', va = 'bottom',
         bbox = dict(boxstyle = 'round,pad=0.5', fc = c, alpha = 0.25),
         arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+        
 z = 0
 for i in pchange24h:
     i = float(i)
