@@ -20,11 +20,13 @@ for i in alldata:
         i['24h_volume_usd'] = float(i['24h_volume_usd'])
         if i['market_cap_usd'] != None:
             i['market_cap_usd'] = float(i['market_cap_usd'])
-            if i['24h_volume_usd'] > 10000:
-                marketcap.append(i['market_cap_usd'])
-                volume.append(i['24h_volume_usd'])
-                coinsnames.append(i['name'])
-                pchange24h.append(i['percent_change_24h'])
+            if i['percent_change_24h'] != None:
+                i['percent_change_24h'] = float(i['percent_change_24h'])
+                if i['24h_volume_usd'] > 10000:
+                    marketcap.append(i['market_cap_usd'])
+                    volume.append(i['24h_volume_usd'])
+                    coinsnames.append(i['name'])
+                    pchange24h.append(i['percent_change_24h'])
 
 # Display the datas with matplotlib
 fig = plt.figure()
@@ -42,7 +44,6 @@ def anotate(c):
         
 z = 0
 for i in pchange24h:
-    i = float(i)
     if i >= 0:
         anotate('green')
     else:
