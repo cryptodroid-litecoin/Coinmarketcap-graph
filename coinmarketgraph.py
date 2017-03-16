@@ -51,7 +51,7 @@ for i in pchange24h:
     i = float(i)
     if i >= 0:
         anotate('green')
-    elif i < 0:
+    else:
         anotate('red')
     z += 1
 
