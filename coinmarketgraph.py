@@ -16,7 +16,7 @@ marketcap = []
 volume = []
 coinsnames = []
 pchange1h = []
-pchange24 = []
+pchange24h = []
 pchange7d = []
 data = []
 for i in alldata:
@@ -29,7 +29,7 @@ for i in alldata:
                 volume.append(i['24h_volume_usd'])
                 coinsnames.append(i['name'])
                 pchange1h.append(i['percent_change_1h'])
-                pchange24.append(i['percent_change_24h'])
+                pchange24h.append(i['percent_change_24h'])
                 pchange7d.append(i['percent_change_7d'])
 
 # Display the datas with matplotlib
