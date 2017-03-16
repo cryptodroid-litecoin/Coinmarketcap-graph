@@ -35,7 +35,6 @@ ax.set_xscale('log')
 ax.set_yscale('log')
 
 # add the name for each coins and colors code for marketcap change for the last 24h
-
 def anotate(c):
         plt.annotate(coinsnames[z], xy=(marketcap[z], volume[z]), xycoords='data',
         xytext=(-20,20), textcoords='offset points',ha = 'right', va = 'bottom',
