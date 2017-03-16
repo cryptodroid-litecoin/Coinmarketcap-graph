@@ -36,19 +36,18 @@ ax.set_xscale('log')
 ax.set_yscale('log')
 
 # add the name for each coins and colors code for marketcap change for the last 24h
+def anotate(c):
+        plt.annotate(coinsnames[z], xy=(marketcap[z], volume[z]), xycoords='data',
+        xytext=(-20,20), textcoords='offset points',ha = 'right', va = 'bottom',
+        bbox = dict(boxstyle = 'round,pad=0.5', fc = c, alpha = 0.25),
+        arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
 z = 0
-for i in pchange24:
+for i in pchange1h:
     i = float(i)
     if i >= 0:
-        plt.annotate(coinsnames[z], xy=(marketcap[z], volume[z]), xycoords='data',
-        xytext=(-20,20), textcoords='offset points',ha = 'right', va = 'bottom',
-        bbox = dict(boxstyle = 'round,pad=0.5', fc = 'green', alpha = 0.25),
-        arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+        anotate('green')
     elif i < 0:
-        plt.annotate(coinsnames[z], xy=(marketcap[z], volume[z]), xycoords='data',
-        xytext=(-20,20), textcoords='offset points',ha = 'right', va = 'bottom',
-        bbox = dict(boxstyle = 'round,pad=0.5', fc = 'red', alpha = 0.25),
-        arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+        anotate('red')
     z += 1
 
 green_patch = mpatches.Patch(color='green', alpha = 0.25, label='up for the last 24h')
