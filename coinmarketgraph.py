@@ -47,7 +47,7 @@ def anotate(c):
         bbox = dict(boxstyle = 'round,pad=0.5', fc = c, alpha = 0.25),
         arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
 z = 0
-for i in pchange1h:
+for i in pchange24h:
     i = float(i)
     if i >= 0:
         anotate('green')
