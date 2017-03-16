@@ -15,7 +15,6 @@ marketcap = []
 volume = []
 coinsnames = []
 pchange24h = []
-data = []
 
 for i in alldata:
     if i['24h_volume_usd'] != None:
